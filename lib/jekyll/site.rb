@@ -28,7 +28,7 @@ module Jekyll
     end
 
     def reset
-      self.time            = Time.parse(self.config['time'].to_s) || Time.now
+      self.time            = self.config['time'] ? Time.parse(self.config['time'].to_s) : Time.now
       self.layouts         = {}
       self.posts           = []
       self.pages           = []
